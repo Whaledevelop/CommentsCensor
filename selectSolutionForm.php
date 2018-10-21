@@ -11,11 +11,15 @@
     [
       "value" => "knuthMorrisPrattAlgorithmSolution", 
       "label" => "Алгоритм Кнута-Морриса-Пратта"
+    ],
+    [
+      "value" => "noNameAlgorithmSolution",
+      "label" => "Мой алгоритм"
     ]
   ];
 ?>
 
-<div id = "selectAlgorithmWindow" class = "contentBlock">
+<div id = "selectSolutionBlock" class = "contentBlock">
   <h5>Применение цензуры к комментариям</h5> 
   <form method = "POST">
     <p>Алгоритмы поиска запрещенных слов:</p>
@@ -44,14 +48,14 @@
     </p>
     <p>
       <input 
-        type = "checkbox" name = "isToMeasureSpeed"
-        <?php if (isset($_REQUEST['isToMeasureSpeed'])) echo "checked"?>
+        type = "checkbox" name = "isToTestProductivity"
+        <?php if (isset($_REQUEST['isToTestProductivity'])) echo "checked"?>
       >
-      Замерить скорость выполнения
+      Протестировать производительность
     </p>
     <input type="submit" value="Выполнить">
-    <?php if (isset($_REQUEST['solution']) && !isset($_REQUEST['resetSolution'])) : ?>
-      <input type="submit" name="resetSolution" value="Отменить цензуру">
+    <?php if (isset($_REQUEST['solution'])) : ?>
+      <input type="submit" name="resetSolution" value="Отменить">
     <?php endif ?>
   </form>
 </div>

@@ -1,5 +1,5 @@
 <?php 
-  function noAlgorithmSolution($comment, $banned) {
-    return str_replace($banned, "*", $comment);
+  function noAlgorithmSolution(string $string, array $patterns) {
+    return str_ireplace($patterns, "*", $string);
   }
 ?>
