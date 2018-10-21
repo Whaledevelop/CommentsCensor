@@ -1,0 +1,39 @@
+h5 {
+  margin-top: 0px;
+}
+
+pre {
+  margin-top: 0px;
+}
+
+#commentsBlock {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.columnsContainer {
+  display: flex;
+  padding: 15px 0px;
+}
+
+.columnsContainer :not(:first-of-type)>div {
+  margin: 0px 15px;
+}
+
+#sidebarColumn {
+  width: 30%; 
+}
+
+
+
+.contentBlock {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#selectAlgorithmWindow {
+  background-color: #F5F5F5;
+}
+
+#solutionCodeBlock {
+  background-color: #fff;
+}

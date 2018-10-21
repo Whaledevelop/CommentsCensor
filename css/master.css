@@ -1,0 +1,23 @@
+body {
+	background-color: #fdd;
+	font-family: sans-serif;
+}
+
+.header	{
+	margin: auto;
+	width: 400px;
+	height: 40px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 24pt;
+	border: 3px solid #caa;
+	border-radius: 15px;
+	color: #caa;
+}
+
+.comment-wrapper > p {
+	background-color: #fff;
+	width: 50%;
+	padding: 10px 20px 20px;
+	border-radius: 10px;
+}
