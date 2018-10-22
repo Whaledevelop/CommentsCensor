@@ -4,7 +4,8 @@
     <table>
       <thead>
         <tr>
-          <th>№ строки (длина строки)</th>
+          <th>№ строки</th>
+          <th>Длина строки</th>
           <th>Время выполнения 1000 повторений (сек.)</th>
         <tr>
         <?php 
@@ -12,7 +13,8 @@
             $commentObj->testProductivity(1000);
         ?>
             <tr>
-              <td><?= ($index + 1)."(".$commentObj->getLength().")"?></td>
+              <td><?= ($index + 1) ?></td>
+              <td><?= $commentObj->getLength() ?></td>
               <td><?= $commentObj->getExecutionTime() ?></td>
             </tr>
         <?php endforeach ?>
