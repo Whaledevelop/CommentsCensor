@@ -1,6 +1,11 @@
 <?php
-  class CensoreTimeMeasuringComment extends CensoredComment {
-    private $executionMemoryUsage, $executionTime;
+  /**
+   * @class CensoreProductivityTestComment - дочерний класс комментария,
+   * к которому применена цензура. Подсчитывает время выполнения
+   * определенного количества выполнений функции-цензора. 
+   */
+  class CensoreProductivityTestComment extends CensoredComment {
+    private $executionTime;
 
     public function __construct(...$args) {
       parent::__construct(...$args);

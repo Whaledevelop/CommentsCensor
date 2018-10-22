@@ -5,16 +5,16 @@
       "label" => "Без алгоритма"
     ],
     [
-      "value" => "naiveAlgorithmSolution", 
-      "label" => "Наивный (простой / линейный) алгоритм"
-    ],
-    [
       "value" => "knuthMorrisPrattAlgorithmSolution", 
       "label" => "Алгоритм Кнута-Морриса-Пратта"
     ],
     [
       "value" => "noNameAlgorithmSolution",
       "label" => "Мой алгоритм"
+    ],
+    [
+      "value" => "naiveAlgorithmSolution", 
+      "label" => "Наивный (простой / линейный) алгоритм"
     ]
   ];
 ?>
@@ -23,15 +23,14 @@
   <h5>Применение цензуры к комментариям</h5> 
   <form method = "POST">
     <p>Алгоритмы поиска запрещенных слов:</p>
+    <p><i>(выстроены по убыванию средней скорости выполнения)</i></p>
     <select name="solution">
 
       <?php foreach ($solutionsOptions as $option) : ?>
 
         <option
           value = <?= $option['value'] ?>
-          <?php 
-            if ($_REQUEST['solution'] === $option['value']) echo "selected" 
-          ?>
+          <?php if ($_REQUEST['solution'] === $option['value']) echo "selected"?>
         >
           <?= $option['label'] ?>
         </option>

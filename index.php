@@ -1,15 +1,11 @@
 <?php
 	define("ROOT", __DIR__);
-	
-	foreach (glob(ROOT."/solutions/*.php") as $solutionFileName) {
-		require_once $solutionFileName;
-	}
 
 	if (isset($_REQUEST['resetSolution'])) {
 		unset($_REQUEST);
 	}
 
-	require_once ROOT."/createCommentsObjectsArray.php";
+	require_once ROOT."/comments/createCommentsObjectsArray.php";
 	$commentsObjectsArray = createCommentsObjectsArray();
 ?>
 
@@ -19,26 +15,26 @@
 	<meta charset="UTF-8">
 	<title>Comments</title>
 	<link rel="stylesheet" href="css/master.css">
-	<link rel="stylesheet" href="css/student.css?v1">
+	<link rel="stylesheet" href="css/student.css"> 
 </head>
 <body>
 
 	<div id = "commentsBlock">
 		<div class = "header">COMMENTS </div>	
 	
-		<?php require_once ROOT."/commentWrapper.php" ?>
+		<?php require_once ROOT."/comments/commentWrapper.php" ?>
 	</div>
 
 	<div class = "columnsContainer">
 		<div id = "sidebarColumn">
 			<?php 
-				require_once ROOT."/selectSolutionForm.php";
-				require_once ROOT."/productivityTestBlock.php" 
+				require_once ROOT."/sidebar/selectSolutionFormBlock.php";
+				require_once ROOT."/sidebar/productivityTestBlock.php" 
 			?>
 		</div>
 	
-		<div id = "codeColumn">
-			<?php require_once ROOT."/solutionCode.php" ?>
+		<div id = "mainColumn">
+			<?php require_once ROOT."/main/solutionCodeBlock.php" ?>
 		</div>
 	</div>
 	

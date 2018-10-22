@@ -1,6 +1,6 @@
 <?php
-  require_once ROOT."/comment/CensoredComment.php";
-  require_once ROOT."/comment/Comment.php";
+  require_once ROOT."/comments/CensoredComment.php";
+  require_once ROOT."/comments/Comment.php";
 
 	function createCommentsObjectsArray() {
     $comments = [
@@ -20,7 +20,9 @@
     $commentsObjectsArray = [];
 		foreach ($comments as $comment) {
 			$commentsObjectsArray[] = isset($_REQUEST['solution']) 
-				? (CensoredComment::create($comment, $banned, $_REQUEST['solution']))
+				? (CensoredComment::create(
+            $_REQUEST['isToTestProductivity'], $comment, $banned, $_REQUEST['solution']
+          ))
 				: new Comment($comment);
 			
     }
